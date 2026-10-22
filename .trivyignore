@@ -1,0 +1,4 @@
+# Exceptions APPROUVÉES uniquement. Format obligatoire :
+#   CVE-ID  # justification | approuvé par | date d'expiration (revue)
+# Exemple (commenté) :
+# CVE-2099-00000  # non exploitable : fonction vulnérable jamais appelée | RSSI J.D. | exp:2026-12-31

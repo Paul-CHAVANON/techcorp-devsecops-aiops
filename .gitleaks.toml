@@ -1,0 +1,16 @@
+title = "TECHCORP gitleaks config"
+
+# Règles par défaut de Gitleaks (AWS, GitHub, Slack, clés privées, generic-api-key, ...)
+[extend]
+useDefault = true
+
+# Règle maison : marqueur de secret FICTIF utilisé pour la démonstration A4.
+[[rules]]
+id = "techcorp-fake-secret"
+description = "Marqueur de secret fictif TECHCORP (démo pipeline bloqué)"
+regex = '''TECHCORP_FAKE_[A-Z0-9]{16,}'''
+keywords = ["techcorp_fake_"]
+tags = ["demo", "techcorp"]
+
+# Exceptions : aucune à ce jour. Une exception = un bloc [[allowlists]] ciblé
+# (empreinte précise, jamais un dossier entier) justifié dans docs/quality-gate.md.
