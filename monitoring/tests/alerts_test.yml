@@ -1,0 +1,40 @@
+# Tests unitaires des règles d'alerte : promtool test rules monitoring/tests/alerts_test.yml
+# Pas de 15 s (proche du scrape de 5 s) : avec un pas de 1 min, une fenêtre [1m]
+# ne contient qu'un échantillon et increase() ne renvoie rien.
+rule_files:
+  - ../alerts.yml
+evaluation_interval: 15s
+tests:
+  - interval: 15s
+    input_series:
+      # 10 min saines (1 req/s), puis toutes les requêtes /orders en 500 pendant 10 min
+      - series: 'techcorp_http_requests_total{job="techcorp-api",path="/orders",status="200"}'
+        values: '0+15x40 600+0x40'
+      - series: 'techcorp_http_requests_total{job="techcorp-api",path="/orders",status="500"}'
+        values: '0+0x40 0+15x40'
+      - series: 'up{job="techcorp-api"}'
+        values: '1x80'
+    alert_rule_test:
+      - eval_time: 9m
+        alertname: ElevatedHTTP500
+        exp_alerts: []
+      - eval_time: 9m
+        alertname: HighHTTP500Ratio
+        exp_alerts: []
+      - eval_time: 15m
+        alertname: ElevatedHTTP500
+        exp_alerts:
+          - exp_labels: {severity: warning}
+            exp_annotations:
+              summary: "Multiple HTTP 500 responses during the last minute"
+      - eval_time: 15m
+        alertname: HighHTTP500Ratio
+        exp_alerts:
+          - exp_labels: {severity: page}
+            exp_annotations:
+              summary: "Plus de 5 % de HTTP 500 sur /orders"
+              description: "Taux d'erreur = 100%"
+              runbook: "docs/plan-restauration.md"
+      - eval_time: 15m
+        alertname: TechcorpApiDown
+        exp_alerts: []

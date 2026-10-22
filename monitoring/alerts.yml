@@ -1,0 +1,38 @@
+groups:
+  - name: techcorp-alerts
+    rules:
+      # Règle FOURNIE par le starter, conservée telle quelle pour la question B4 :
+      # seuil absolu (>= 3 erreurs 500 en 1 min), sans rapport au trafic ni à l'historique.
+      - alert: ElevatedHTTP500
+        expr: sum(increase(techcorp_http_requests_total{status="500"}[1m])) >= 3
+        for: 15s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Multiple HTTP 500 responses during the last minute"
+
+      # Version améliorée : proportion d'erreurs (indépendante du volume) + trafic minimal.
+      - alert: HighHTTP500Ratio
+        expr: |
+          (
+            sum(rate(techcorp_http_requests_total{job="techcorp-api",path="/orders",status="500"}[1m]))
+            /
+            sum(rate(techcorp_http_requests_total{job="techcorp-api",path="/orders"}[1m]))
+          ) > 0.05
+          and
+          sum(rate(techcorp_http_requests_total{job="techcorp-api",path="/orders"}[1m])) > 0.1
+        for: 1m
+        labels:
+          severity: page
+        annotations:
+          summary: "Plus de 5 % de HTTP 500 sur /orders"
+          description: "Taux d'erreur = {{ $value | humanizePercentage }}"
+          runbook: "docs/plan-restauration.md"
+
+      - alert: TechcorpApiDown
+        expr: up{job="techcorp-api"} == 0
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Cible techcorp-api injoignable"
