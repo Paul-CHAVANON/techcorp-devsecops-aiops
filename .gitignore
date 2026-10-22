@@ -1,0 +1,10 @@
+__pycache__/
+.pytest_cache/
+.venv/
+.env
+*.key
+*.pem
+# report.json brut du starter (racine) ; les rapports livrables sont dans reports/
+/report.json
+image.tar
+gitleaks-report.json
