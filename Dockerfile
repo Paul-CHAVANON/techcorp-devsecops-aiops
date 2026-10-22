@@ -7,6 +7,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1
 
 WORKDIR /app
+# setuptools fourni par l'image embarque jaraco.context 5.3.0 (CVE-2026-23949) et
+# wheel 0.45.1 (CVE-2026-24049), HIGH avec correctif : 84.0.0 embarque 6.1.0 et 0.46.3.
+RUN pip install --no-cache-dir --upgrade setuptools==84.0.0
 COPY app/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
