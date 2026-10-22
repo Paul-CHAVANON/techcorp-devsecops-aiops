@@ -1,0 +1,20 @@
+{
+  "status": "OK",
+  "severity": "none",
+  "current_error_rate": 0.0,
+  "baseline_mean": 0.0032,
+  "baseline_std": 0.0055,
+  "z_score": -0.58,
+  "ratio": 0.0,
+  "window_seconds": 300,
+  "window_requests": 541.0,
+  "window_errors": 0.0,
+  "first_error_ts": null,
+  "reasons": [
+    "Taux d'erreur courant = 0.0% (0/541) < seuil 5%.",
+    "Baseline : moyenne 0.32%, écart-type 0.55% sur 4 pas → z-score = -0.6 (seuil 3.0).",
+    "Ratio courant/baseline = 0.0 (seuil 3.0).",
+    "Verdict : OK."
+  ]
+}
+# 22/10/2026 20:28:55 CEST — python -m aiops.detector → code retour = 0 (0 = OK)

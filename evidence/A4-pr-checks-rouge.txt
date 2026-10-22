@@ -1,0 +1,6 @@
+# gh pr checks 2 — 22/10/2026 16:54:26 CEST — PR https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops/pull/2 (commit 5bc8afb, secret fictif injecté)
+Quality gate	fail	3s	https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops/actions/runs/39798898622/job/119894200762	
+Secrets (Gitleaks)	fail	7s	https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops/actions/runs/39798898622/job/119893634785	
+Dépendances (Trivy fs)	pass	19s	https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops/actions/runs/39798898622/job/119893634863	
+Image Docker (build + Trivy image)	pass	31s	https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops/actions/runs/39798898622/job/119893902280	
+Tests Pytest	pass	27s	https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops/actions/runs/39798898622/job/119893634403	

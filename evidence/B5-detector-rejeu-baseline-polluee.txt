@@ -1,0 +1,21 @@
+{
+  "status": "OK",
+  "severity": "none",
+  "current_error_rate": 0.1998,
+  "baseline_mean": 0.298,
+  "baseline_std": 0.4481,
+  "z_score": -0.22,
+  "ratio": 0.67,
+  "window_seconds": 300,
+  "window_requests": 511.2,
+  "window_errors": 102.2,
+  "first_error_ts": 1792683461.943,
+  "reasons": [
+    "Taux d'erreur courant = 20.0% (102/511) ≥ seuil 5%.",
+    "Baseline : moyenne 29.80%, écart-type 44.81% sur 54 pas → z-score = -0.2 (seuil 3.0).",
+    "Ratio courant/baseline = 0.7 (seuil 3.0).",
+    "Seuil dépassé mais comportement habituel au regard de l'historique : à surveiller.",
+    "Verdict : OK."
+  ]
+}
+# 22/10/2026 17:38:41 CEST — rejeu de l'incident — python -m aiops.detector → code retour = 0 (2 = anomalie)

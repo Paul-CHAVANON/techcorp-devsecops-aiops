@@ -1,0 +1,6 @@
+# gh pr checks 2 — 22/10/2026 17:04:58 CEST — PR https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops/pull/2 (commit 21de2e9, historique réécrit par demo_secret_fix.sh)
+Dépendances (Trivy fs)	pass	18s	https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops/actions/runs/39800105187/job/119898051360	
+Image Docker (build + Trivy image)	pass	33s	https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops/actions/runs/39800105187/job/119898250452	
+Quality gate	pass	3s	https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops/actions/runs/39800105187/job/119898576074	
+Secrets (Gitleaks)	pass	11s	https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops/actions/runs/39800105187/job/119898051939	
+Tests Pytest	pass	20s	https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops/actions/runs/39800105187/job/119898051981	

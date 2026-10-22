@@ -1,7 +1,8 @@
 import json
 
+from aiops import llm_client
 from aiops.collector import collect
-from aiops.llm_client import build_prompt, harden
+from aiops.llm_client import analyse, build_prompt, harden
 
 FIXTURE = "aiops/fixtures/incident_metrics.json"
 LOGS = "aiops/fixtures/incident.log"
@@ -27,3 +28,15 @@ def test_prompt_masque_et_encadre_les_donnees():
     assert "IGNORE PREVIOUS" not in data          # l'injection n'atteint jamais le modèle
     corr = json.loads(data)["correlation"]
     assert corr["delta_seconds"] == 121 and corr["deploy_source"].startswith("logs")
+
+
+def test_reponse_llm_vide_bascule_en_mode_simule(monkeypatch):
+    # qwen3 avec raisonnement actif renvoyait « {} » : le rapport ne doit pas être vide
+    class FakeResponse:
+        def __enter__(self): return self
+        def __exit__(self, *a): return False
+        def read(self): return json.dumps({"response": "{}"}).encode()
+    monkeypatch.setattr(llm_client.urllib.request, "urlopen", lambda *a, **k: FakeResponse())
+    out = analyse(collect(fixture=FIXTURE, logs_file=LOGS), mode="auto")
+    assert out["mode"] == "simulated" and "ValueError" in out["fallback_reason"]
+    assert out["analysis"]["remediation_proposee"]

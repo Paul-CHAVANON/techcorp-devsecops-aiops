@@ -270,6 +270,8 @@
             ]
           },
           "custom": {
+            "axisSoftMin": 0,
+            "axisSoftMax": 1,
             "thresholdsStyle": {
               "mode": "line"
             }

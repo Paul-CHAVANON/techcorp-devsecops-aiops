@@ -6,6 +6,7 @@ que du texte et n'a aucun accès au socket Docker ni au shell.
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import urllib.parse
 import urllib.request
@@ -49,9 +50,8 @@ def parse_ts(value: str | None) -> float | None:
     v = value.replace("Z", "+00:00")
     if "." in v:  # Docker : nanosecondes → microsecondes
         head, tail = v.split(".", 1)
-        frac = "".join(ch for ch in tail if ch.isdigit())[:6]
-        tz = tail[len("".join(ch for ch in tail if ch.isdigit())):]
-        v = f"{head}.{frac}{tz}"
+        digits = re.match(r"\d*", tail).group()  # chiffres de la fraction seulement, pas ceux du fuseau
+        v = f"{head}.{digits[:6]}{tail[len(digits):]}"
     try:
         return datetime.fromisoformat(v).timestamp()
     except ValueError:
@@ -103,6 +103,11 @@ def collect(prometheus: str | None = None, fixture: str | None = None, logs_file
         log_lines = docker_logs()
         source += " + docker compose logs (lecture seule, --tail borné)"
     logs = summarize_logs(log_lines)
+    if not logs["deploy_events"] and not logs_file:
+        # Le --tail borné perd vite l'événement de démarrage : relecture ciblée, seules les
+        # lignes de déploiement sont conservées (le volume transmis reste borné).
+        deploy_lines = [line for line in docker_logs(since="2h", tail=20000) if "event=deploy_success" in line]
+        logs["deploy_events"] = summarize_logs(deploy_lines)["deploy_events"]
 
     # Heure du changement : événement de déploiement dans les logs, sinon contexte déclaré
     dep = next((d for d in reversed(logs["deploy_events"]) if parse_ts(d["ts"])), None)
