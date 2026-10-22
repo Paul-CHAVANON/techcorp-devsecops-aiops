@@ -1,0 +1,15 @@
+# C3 — 22/10/2026 20:29:10 CEST
+$ ollama list
+NAME         ID              SIZE      MODIFIED     
+qwen3:14b    bdbd181c33f2    9.3 GB    2 months ago    
+
+Mode utilisé (reports/report.json, rapport du rejeu approuvé à 20:19:34) :
+{
+ "mode": "ollama",
+ "model": "qwen3:14b",
+ "fallback_reason": null,
+ "prompt_chars": 5026,
+ "validation_warnings": []
+}
+
+Appel : POST http://localhost:11434/api/generate, format=json, think=false, temperature=0.1, num_predict=1200, OLLAMA_TIMEOUT=300 s (réponse en 1 min 46 s, journal Ollama 17:44:04 : HTTP 200)

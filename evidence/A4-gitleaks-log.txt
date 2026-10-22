@@ -1,0 +1,19 @@
+# Extrait du job « Secrets (Gitleaks) » — run 39798898622 (PR #2) — récupéré le 22/10/2026 16:54:40 CEST via gh run view --log-failed
+# Le secret est masqué par --redact ; il s'agit du marqueur FICTIF de la démo A4.
+Finding:     PAYMENT_API_KEY=REDACTED
+Secret:      REDACTED
+RuleID:      techcorp-fake-secret
+Entropy:     4.415061
+Tags:        [demo techcorp]
+File:        config/leak-demo.env
+Line:        1
+Commit:      5bc8afb88c580859409cc08dfe97cdcb23a92236
+Author:      Paul Chavanon
+Email:       chavanon.5.paul@gmail.com
+Date:        2026-10-22T14:48:07Z
+Fingerprint: 5bc8afb88c580859409cc08dfe97cdcb23a92236:config/leak-demo.env:techcorp-fake-secret:1
+Link:        https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops/blob/5bc8afb88c580859409cc08dfe97cdcb23a92236/config/leak-demo.env#L1
+
+2:48PM INF 8 commits scanned.
+2:48PM INF scanned ~128173 bytes (128.17 KB) in 87.3ms
+2:48PM WRN leaks found: 1

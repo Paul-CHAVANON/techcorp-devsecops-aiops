@@ -1,0 +1,21 @@
+# Extrait des logs PENDANT l'incident, tels que transmis au LLM (masqués, bornés) — reports/report.json, evidence.logs.examples_redacted
+2026-10-22T15:38:55.636805636Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:38:56.575449095Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:38:57.605091012Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:38:58.609134345Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:38:59.400955304Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:00.250423180Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:01.206045055Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:02.263299250Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:03.082930750Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:04.111356375Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:05.160549834Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:06.203382960Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:06.992791294Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:07.818480502Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:08.738130044Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:09.775666753Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:10.608883212Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:11.635662337Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:12.652946921Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042
+2026-10-22T15:39:13.692577963Z ERROR:    order_processing_failed db_connection_timeout route=/orders release=2.4.7 event=INC-2026-1042

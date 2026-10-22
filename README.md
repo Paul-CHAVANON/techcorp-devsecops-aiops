@@ -1,5 +1,7 @@
 # TECHCORP — TP intégré DevSecOps + AIOps (INC-2026-1042)
 
+> **📄 Rendu commenté, mission par mission, avec les captures : [docs/RENDU.md](docs/RENDU.md)** · Journal d'exécution : [docs/journal-execution.md](docs/journal-execution.md)
+
 Solution construite sur le squelette fourni : mêmes chemins, mêmes métriques (`techcorp_http_requests_total`, `techcorp_request_duration_seconds`), même règle `ElevatedHTTP500`, mêmes fonctions de départ dans `aiops/detector.py` (les tests d'origine passent toujours). Voir `SUJET_TP.md` et le PDF pour le scénario.
 
 ## 1. Lancement
@@ -11,7 +13,7 @@ docker compose up --build -d && docker compose ps
 curl http://localhost:8000/health && curl http://localhost:8000/orders
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements-dev.txt
-python -m pytest -q                      # 23 tests
+python -m pytest -q                      # 25 tests
 ```
 
 Windows / PowerShell :

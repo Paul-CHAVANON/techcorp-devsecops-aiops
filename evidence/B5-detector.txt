@@ -1,0 +1,21 @@
+{
+  "status": "ANOMALY",
+  "severity": "critical",
+  "current_error_rate": 0.335,
+  "baseline_mean": 0.0,
+  "baseline_std": 0.0,
+  "z_score": 67.0,
+  "ratio": "inf",
+  "window_seconds": 300,
+  "window_requests": 485.6,
+  "window_errors": 162.7,
+  "first_error_ts": 1792681619.344,
+  "reasons": [
+    "Taux d'erreur courant = 33.5% (163/486) ≥ seuil 5%.",
+    "Baseline : moyenne 0.00%, écart-type 0.00% sur 26 pas → z-score = 67.0 (seuil 3.0).",
+    "Ratio courant/baseline = ∞ (baseline à 0 %) (seuil 3.0).",
+    "Première erreur 500 de la fenêtre vers 15:06:59 UTC (±1 pas).",
+    "Verdict : ANOMALIE (seuil dépassé ET écart significatif à l'historique)."
+  ]
+}
+# 22/10/2026 17:08:05 CEST — python -m aiops.detector → code retour = 2 (2 = anomalie)
