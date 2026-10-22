@@ -1,6 +1,6 @@
 # Rendu — TP TECHCORP DevSecOps & AIOps (INC-2026-1042)
 
-**Auteur :** Paul Chavanon · **Dépôt :** https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops · **Exécution :** 22/10/2026, MacBook Apple Silicon (Docker Desktop 29.9.2 arm64, Python 3.12, Ollama `qwen3:14b`)
+**Équipe :** Paul Chavanon, Nicodem BAJOR · **Rapport PDF :** [TECHCORP_TP_Rendu_Chavanon_Bajor.pdf](TECHCORP_TP_Rendu_Chavanon_Bajor.pdf) · **Dépôt :** https://github.com/Paul-CHAVANON/techcorp-devsecops-aiops · **Exécution :** 22/10/2026, MacBook Apple Silicon (Docker Desktop 29.9.2 arm64, Python 3.12, Ollama `qwen3:14b`)
 
 Toutes les heures sont en heure de Paris (UTC+2), sauf celles des logs et des rapports, qui sont en UTC. Le déroulé complet, avec les problèmes rencontrés et leurs corrections, se trouve dans [journal-execution.md](journal-execution.md). Les captures ont été prises avec [scripts/capture.py](../scripts/capture.py) (Playwright headless, 1600×1000, fr-FR), qui ajoute un bandeau avec l'URL et l'heure.
 

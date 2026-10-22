@@ -1,6 +1,8 @@
 # TECHCORP — TP intégré DevSecOps + AIOps (INC-2026-1042)
 
-> **📄 Rendu commenté, mission par mission, avec les captures : [docs/RENDU.md](docs/RENDU.md)** · Journal d'exécution : [docs/journal-execution.md](docs/journal-execution.md)
+> **Équipe :** Paul Chavanon, Nicodem BAJOR
+>
+> **📄 Rendu commenté, mission par mission, avec les captures : [docs/RENDU.md](docs/RENDU.md)** · Rapport PDF : [docs/TECHCORP_TP_Rendu_Chavanon_Bajor.pdf](docs/TECHCORP_TP_Rendu_Chavanon_Bajor.pdf) · Journal d'exécution : [docs/journal-execution.md](docs/journal-execution.md)
 
 Solution construite sur le squelette fourni : mêmes chemins, mêmes métriques (`techcorp_http_requests_total`, `techcorp_request_duration_seconds`), même règle `ElevatedHTTP500`, mêmes fonctions de départ dans `aiops/detector.py` (les tests d'origine passent toujours). Voir `SUJET_TP.md` et le PDF pour le scénario.
 
