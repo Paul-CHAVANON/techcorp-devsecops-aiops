@@ -1,0 +1,11 @@
+{
+  "service": "orders-api",
+  "incident_id": "INC-2026-1042",
+  "previous_version": "2.4.6",
+  "deployed_version": "2.4.7",
+  "deployed_at": "2026-10-22T10:15:01Z",
+  "deployed_by": "pipeline GitHub Actions (main)",
+  "change_summary": "Release 2.4.7 — contenu détaillé à compléter depuis le diff 2.4.6..2.4.7.",
+  "rollback_target": "techcorp-api:2.4.6",
+  "note": "Valeur de repli : si les logs contiennent un événement event=deploy_success, il est prioritaire."
+}

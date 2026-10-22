@@ -1,0 +1,326 @@
+{
+ "description": "INC-2026-1042 \u2014 s\u00e9ries /orders par pas de 1 min (fictives, reproductibles), UTC",
+ "now": 1792664520.0,
+ "samples": [
+  {
+   "timestamp": 1792660800.0,
+   "requests": 62,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792660860.0,
+   "requests": 66,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792660920.0,
+   "requests": 65,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792660980.0,
+   "requests": 70,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661040.0,
+   "requests": 64,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661100.0,
+   "requests": 70,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661160.0,
+   "requests": 60,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661220.0,
+   "requests": 75,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661280.0,
+   "requests": 71,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661340.0,
+   "requests": 63,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661400.0,
+   "requests": 57,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661460.0,
+   "requests": 63,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661520.0,
+   "requests": 73,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661580.0,
+   "requests": 71,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661640.0,
+   "requests": 61,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661700.0,
+   "requests": 69,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661760.0,
+   "requests": 59,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661820.0,
+   "requests": 65,
+   "errors": 1
+  },
+  {
+   "timestamp": 1792661880.0,
+   "requests": 72,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792661940.0,
+   "requests": 72,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792662000.0,
+   "requests": 60,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792662060.0,
+   "requests": 73,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792662120.0,
+   "requests": 55,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792662180.0,
+   "requests": 72,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792662240.0,
+   "requests": 71,
+   "errors": 1
+  },
+  {
+   "timestamp": 1792662300.0,
+   "requests": 61,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792662360.0,
+   "requests": 61,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792662420.0,
+   "requests": 69,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792662480.0,
+   "requests": 56,
+   "errors": 1
+  },
+  {
+   "timestamp": 1792662540.0,
+   "requests": 61,
+   "errors": 1
+  },
+  {
+   "timestamp": 1792662600.0,
+   "requests": 65,
+   "errors": 1
+  },
+  {
+   "timestamp": 1792662660.0,
+   "requests": 64,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792662720.0,
+   "requests": 61,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792662780.0,
+   "requests": 69,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792662840.0,
+   "requests": 62,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792662900.0,
+   "requests": 56,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792662960.0,
+   "requests": 60,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663020.0,
+   "requests": 64,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663080.0,
+   "requests": 72,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663140.0,
+   "requests": 75,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663200.0,
+   "requests": 64,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663260.0,
+   "requests": 73,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663320.0,
+   "requests": 72,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663380.0,
+   "requests": 66,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663440.0,
+   "requests": 73,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663500.0,
+   "requests": 75,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663560.0,
+   "requests": 60,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663620.0,
+   "requests": 65,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663680.0,
+   "requests": 61,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663740.0,
+   "requests": 61,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663800.0,
+   "requests": 60,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663860.0,
+   "requests": 65,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663920.0,
+   "requests": 62,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792663980.0,
+   "requests": 66,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792664040.0,
+   "requests": 71,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792664100.0,
+   "requests": 60,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792664160.0,
+   "requests": 68,
+   "errors": 1
+  },
+  {
+   "timestamp": 1792664220.0,
+   "requests": 68,
+   "errors": 0
+  },
+  {
+   "timestamp": 1792664280.0,
+   "requests": 73,
+   "errors": 50
+  },
+  {
+   "timestamp": 1792664340.0,
+   "requests": 62,
+   "errors": 35
+  },
+  {
+   "timestamp": 1792664400.0,
+   "requests": 57,
+   "errors": 34
+  },
+  {
+   "timestamp": 1792664460.0,
+   "requests": 65,
+   "errors": 41
+  },
+  {
+   "timestamp": 1792664520.0,
+   "requests": 67,
+   "errors": 42
+  }
+ ],
+ "latency_p95_seconds": {
+  "before": 0.028,
+  "during": 0.48
+ },
+ "target_up": 1
+}
