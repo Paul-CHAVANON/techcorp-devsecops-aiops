@@ -1,0 +1,6 @@
+# Mis à jour : fastapi 0.115.12 tirait starlette 0.46.2 (CVE-2025-62727, CVE-2025-54121).
+# starlette est épinglé explicitement car c'est une dépendance transitive critique.
+fastapi==0.159.1
+starlette==1.9.0
+uvicorn==0.54.0
+prometheus-client==0.26.0

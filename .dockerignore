@@ -1,0 +1,14 @@
+.git
+.github
+__pycache__
+*.pyc
+.pytest_cache
+tests
+docs
+reports
+evidence
+aiops
+monitoring
+scripts
+.env
+*.env
