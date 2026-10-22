@@ -16,6 +16,8 @@ import urllib.request
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.2")
+# Un modèle de 14 B sur un portable génère ~9 tokens/s : 120 s ne suffisent pas toujours.
+OLLAMA_TIMEOUT = int(os.getenv("OLLAMA_TIMEOUT", "300"))
 
 REQUIRED_KEYS = ["symptomes", "hypotheses", "controles_non_destructifs", "limites", "remediation_proposee"]
 SENSITIVE = re.compile(r"(?i)rollback|redémarr|redemarr|restart|reboot|kill|drop|delete|truncate|migrat|scale|failover|bascule|purge")
@@ -50,18 +52,24 @@ def build_prompt(evidence: dict) -> str:
             f"{json.dumps(compact, ensure_ascii=False, default=str)}\n<<<FIN_DONNEES>>>\n\nJSON :")
 
 
-def call_ollama(prompt: str, model: str = OLLAMA_MODEL, url: str = OLLAMA_URL, timeout: int = 120) -> dict:
+def call_ollama(prompt: str, model: str = OLLAMA_MODEL, url: str = OLLAMA_URL, timeout: int = OLLAMA_TIMEOUT) -> dict:
     body = json.dumps({
         "model": model,
         "prompt": prompt,
         "stream": False,
         "format": "json",
+        # Modèles « à raisonnement » (qwen3…) : avec format=json et le raisonnement actif,
+        # Ollama renvoie « {} ». Sans effet sur les modèles qui ne raisonnent pas.
+        "think": False,
         "options": {"temperature": 0.1, "num_predict": 1200},
     }).encode()
     req = urllib.request.Request(f"{url}/api/generate", data=body, headers={"Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         raw = json.load(r)
-    return json.loads(raw["response"])
+    result = json.loads(raw["response"])
+    if not isinstance(result, dict) or not any(k in result for k in REQUIRED_KEYS):
+        raise ValueError("réponse LLM sans aucun champ attendu")
+    return result
 
 
 def simulated_analysis(evidence: dict) -> dict:
@@ -154,7 +162,7 @@ def analyse(evidence: dict, mode: str = "auto") -> dict:
         try:
             result = call_ollama(prompt)
             used = "ollama"
-        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, KeyError, ConnectionError) as e:
+        except (urllib.error.URLError, TimeoutError, ValueError, KeyError, ConnectionError) as e:
             if mode == "ollama":
                 raise
             error = f"Ollama indisponible ou réponse invalide ({type(e).__name__}) → mode simulé"
