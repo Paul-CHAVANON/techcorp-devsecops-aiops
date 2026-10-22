@@ -78,3 +78,9 @@ Heures locales (Europe/Paris). Machine : MacBook Apple Silicon (arm64), macOS 27
 - 20:19:34 — **Paul a tapé lui-même `APPROUVE 1`** (rollback vers 2.4.6). Rapport régénéré : déploiement lu dans les logs à 15:37:34 UTC, premières erreurs vues à 15:38:55 UTC (+81 s). Limite : la vraie première erreur date de 15:37:39 ; elle est hors de la fenêtre `--tail 500`, qui ne garde que les dernières lignes.
 - 20:20 — Trafic relancé, puis `./scripts/restore.sh`. Entre 18:32 et 20:20, en attendant l'approbation, il n'y avait pas de trafic : les graphes sont vides sur cette période.
 - 20:28 — Preuves APRÈS : `D-grafana-apres.png` (0 % d'erreur sur 5 min, p95 ≈ 47 ms), `D-alertes-apres.png`, détecteur **OK** (code retour 0) → `D-detector-apres.txt`, `C-logs-extrait.txt` (50 dernières lignes, après restauration), `C-logs-incident-masques.txt` (logs de l'incident tels que transmis au LLM, masqués et bornés).
+
+## Étape 5 — Rendu
+
+- 20:30 — `docs/RENDU.md` (une section par mission, de A1 à D25, avec captures, légendes et heures), lien en haut du README, `docs/preuves.md` aligné sur les fichiers produits, R3 du registre complété. Rapports vérifiés : incident rejoué, mode `ollama`, approbateur **Paul Chavanon**.
+- 20:32 — PR #3 (4 commits : 2 correctifs AIOps testés, captures et dashboard, documentation et preuves) : 5 checks verts, fusionnée. CI de `main` **verte** à 20:34.
+- Ensuite : cette entrée (PR #4), puis `docker compose down` et copie du dossier (sans `.venv` ni `.git`) dans iCloud `Bureau/RNCP - 7/DevOps/TECHCORP_TP_RENDU`, avec `TECHCORP_TP_RENDU.zip`.
